@@ -11,7 +11,7 @@ It's one service and a Railway volume.
 - **Locked from the first boot.** A random bearer token is generated at deploy time. Every MCP, hook and handoff request must carry it; anything else gets a 401.
 - **One server for all your machines.** Your laptop, desktop, cloud agent boxes and teammates point at the same HTTPS address, so memory follows you instead of living in one home directory.
 - **Survives redeploys.** The SQLite database and the markdown wiki (with its git history) live on the volume.
-- **Small.** The image is about 50 MB and the server idles at a few dozen MB of RAM.
+- **Small.** The image is about 50 MB and the server uses about 200 MB of RAM, so it fits the Free plan.
 
 ## Common Use Cases
 
