@@ -5,5 +5,6 @@
   "category": "AI/ML",
   "image": "https://raw.githubusercontent.com/two-workspaces/ai-memory/main/icon.png",
   "card_desc": "ai-memory: a shared memory server for coding agents. Claude Code, Codex, OpenCode and others record sessions over MCP and hooks, then recall past work and pick up handoffs on any machine or teammate's laptop.",
-  "id": "13ddb6b4-7d44-4f19-9186-c5a0c4465697"
+  "id": "13ddb6b4-7d44-4f19-9186-c5a0c4465697",
+  "published": true
 }
