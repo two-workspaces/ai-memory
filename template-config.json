@@ -1,0 +1,55 @@
+{
+  "services": {
+    "43c10ff8-1fee-4562-92a4-f63fb13af2e5": {
+      "icon": "https://raw.githubusercontent.com/two-workspaces/ai-memory/main/icon.png",
+      "name": "AI Memory",
+      "build": {},
+      "deploy": {
+        "startCommand": null,
+        "healthcheckPath": "/healthz",
+        "restartPolicyType": "ON_FAILURE",
+        "restartPolicyMaxRetries": 10
+      },
+      "source": {
+        "image": "akitaonrails/ai-memory:3.1.1"
+      },
+      "networking": {
+        "serviceDomains": {
+          "<hasDomain>": {}
+        }
+      },
+      "volumeMounts": {
+        "b531a1d3-66a2-4b7a-b9fe-5874f0936c87": {
+          "mountPath": "/data"
+        }
+      },
+      "variables": {
+        "AI_MEMORY_AUTH_TOKEN": {
+          "defaultValue": "${{secret(48)}}",
+          "description": "Bearer token your agents send - paste it into install-mcp/install-hooks",
+          "isOptional": false
+        },
+        "AI_MEMORY_ALLOWED_HOSTS": {
+          "defaultValue": "${{RAILWAY_PUBLIC_DOMAIN}},${{RAILWAY_PRIVATE_DOMAIN}},healthcheck.railway.app,localhost,127.0.0.1",
+          "description": "Hostnames the server answers to - add your custom domain here",
+          "isOptional": false
+        },
+        "AI_MEMORY_AUTH__SECURE_COOKIE": {
+          "defaultValue": "true",
+          "description": "Railway serves HTTPS, so browser cookies are marked secure",
+          "isOptional": false
+        },
+        "PORT": {
+          "defaultValue": "49374",
+          "description": "Port Railway routes to - leave as is",
+          "isOptional": false
+        },
+        "RAILWAY_RUN_UID": {
+          "defaultValue": "0",
+          "description": "Run as root so ai-memory can write to the Railway volume",
+          "isOptional": false
+        }
+      }
+    }
+  }
+}
